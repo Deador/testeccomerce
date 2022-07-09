@@ -1,8 +1,8 @@
 // ---------------------Импорты------------------
-import clearChipCart from "./modules/cart/clearChipCartActive.js";
-import itogCost from "./modules/cart/itogCost.js";
-import deleteCartItem from "./modules/cart/deleteCartItem.js";
-import clearCart from "./modules/cart/clearCart.js";
+import clearChipCart from "modules/cart/clearChipCartActive.js";
+import itogCost from "modules/cart/itogCost.js";
+import deleteCartItem from "modules/cart/deleteCartItem.js";
+import clearCart from "modules/cart/clearCart.js";
 
 // ----------------------Элементы--------------------
 const itemsCart = document.querySelector(".items_container");
@@ -11,13 +11,13 @@ const cardRow = document.querySelector(".card_row");
 // ---------------------Главная функция-------------------
 async function cartProduct() {
   //-------Генерация контента карточек через json------
-  const data = await fetch("./assortiment.json"); // Получаю json в виде промисса
+  const data = await fetch("assortiment.json"); // Получаю json в виде промисса
   const json = await data.json(); // Преобразую этот промисс в json
 
   for (let item of json) {
     const cardHTML = `<div class="card_item" data-id="${item.id}">
         <img
-          src="/source/popular/${item.img}"
+          src="source/popular/${item.img}"
           alt=""
           class="img_card_popular"
         />
@@ -33,10 +33,10 @@ async function cartProduct() {
         </div>
         <div class="card_hover none">
           <a data-cart href="#" class="btn_cart"
-            ><img src="/source/icons/icons_menu/cart.svg" alt=""
+            ><img src="source/icons/icons_menu/cart.svg" alt=""
           /></a>
           <a href="#" class="icon_favorite"
-            ><img src="/source/popular/heart.svg" alt=""
+            ><img src="source/popular/heart.svg" alt=""
           /></a>
         </div>
       </div>`;
@@ -108,7 +108,7 @@ async function cartProduct() {
               <span class="price_item_cart">${cardObject.price}</span>
               <div class="clear_btn"
                 ><img data-delete
-                  src="/source/icons/icons_menu/Trash_light.svg"
+                  src="source/icons/icons_menu/Trash_light.svg"
                   alt=""
                   class="clear_icon"
               /></div>

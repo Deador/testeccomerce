@@ -126,6 +126,3 @@ async function cartProduct() {
     };
   });
 }
-deleteCartItem(); // Удаление товара из корзины
-clearCart(); // Полная очистка корзины
-cartProduct();

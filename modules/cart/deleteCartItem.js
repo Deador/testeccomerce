@@ -1,5 +1,5 @@
-import clearChipCart from "/modules/cart/clearChipCartActive.js";
-import itogCost from "/modules/cart/itogCost.js";
+import clearChipCart from "testeccomerce.github.io/modules/cart/clearChipCartActive.js"; 
+import itogCost from "testeccomerce.github.io/modules/cart/itogCost.js";
 export default deleteCartItem;
 
 // Удаление одного товара из корзины

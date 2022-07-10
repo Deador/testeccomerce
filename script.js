@@ -1,8 +1,4 @@
 // ---------------------Импорты------------------
-import clearChipCart from "modules/cart/clearChipCartActive.js";
-import itogCost from "modules/cart/itogCost.js";
-import deleteCartItem from "modules/cart/deleteCartItem.js";
-import clearCart from "modules/cart/clearCart.js";
 
 // ----------------------Элементы--------------------
 const itemsCart = document.querySelector(".items_container");

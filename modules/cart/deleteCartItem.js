@@ -1,6 +1,6 @@
 // import clearChipCart from "./modules/cart/clearChipCartActive.js"; 
 import clearChipCart from "./clearChipCartActive.js"; 
-import itogCost from "./cart/itogCost.js";
+import itogCost from "./itogCost.js";
 export default deleteCartItem;
 
 // Удаление одного товара из корзины

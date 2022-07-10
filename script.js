@@ -11,7 +11,7 @@ const cardRow = document.querySelector(".card_row");
 // ---------------------Главная функция-------------------
 async function cartProduct() {
   //-------Генерация контента карточек через json------
-  const data = await fetch("assortiment.json"); // Получаю json в виде промисса
+  const data = await fetch("/assortiment.json"); // Получаю json в виде промисса
   const json = await data.json(); // Преобразую этот промисс в json
 
   for (let item of json) {

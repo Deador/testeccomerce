@@ -1,6 +1,6 @@
 // ---------------------Импорты------------------
-import clearChipCart from "/testeccomerce.github.io/modules/cart/clearChipCartActive.js";
-import itogCost from "/testeccomerce.github.io/modules/cart/itogCost.js";
+import clearChipCart from "/cart/clearChipCartActive.js";
+import itogCost from "/cart/itogCost.js";
 import deleteCartItem from "./modules/cart/deleteCartItem.js";
 import clearCart from "./modules/cart/clearCart.js";
 

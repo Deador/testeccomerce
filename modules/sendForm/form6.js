@@ -107,27 +107,22 @@ form.onsubmit = (e) => {
       e.preventDefault();
     }
   }
-
+//========Отправка данных с формы ====
   async function sendMail(formData) {
-    //========Отправка данных в php скрипт====
-    fetch("mail.php", {
+    
+    const response = await fetch("https://formspree.io/f/meqnbrrg", {
       method: "POST",
       body: formData,
-    })
-      .then(function (response) {
-        return response.text();
-      })
-      .then(function (text) {
-        console.log(text);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    // if (response.ok){
-    //   console.log("Форма отправлена")
-    // }else{
-    //   console.log("Ошибка")
-    // }
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    if (response.ok) {
+      console.log("Форма отправлена");
+      form.reset();
+    } else {
+      console.log("Ошибка");
+    }
   }
 
   testValidate();

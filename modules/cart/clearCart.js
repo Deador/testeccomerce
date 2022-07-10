@@ -1,4 +1,4 @@
-import clearChipCart from "/clearChipCartActive.js";
+import clearChipCart from "./clearChipCartActive.js";
 export default clearCart;
 
 function clearCart() {

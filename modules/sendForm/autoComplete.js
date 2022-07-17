@@ -1,4 +1,4 @@
-import addAdress from "./sendForm/addAdress.js";
+import addAdress from "./addAdress.js";
 
 const inputAdress = document.querySelector(".adress");
 const adressContainer = document.querySelector(".adress_container");

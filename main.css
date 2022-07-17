@@ -14,7 +14,6 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  /* height: 100vh; */
 }
 
 a {
@@ -381,20 +380,32 @@ textarea.form_input {
 .btn_text {
   font-size: 16px;
   line-height: 20px;
-  margin-right: 56px;
   cursor: pointer;
 }
 
 .btn_primary {
+  margin-right: 56px;
   padding: 16px 32px;
   background-color: #da1934;
   border-radius: 8px;
   color: #fff;
+  transition: background 0.2s linear;
+}
+
+.btn_primary:hover {
+  background: #fb313a;
 }
 
 .btn_text {
+  padding: 16px 32px;
+  border-radius: 8px;
   background: none;
   color: #222529;
+  transition: background 0.2s linear;
+}
+
+.btn_text:hover {
+  background: #f5f5f5;
 }
 
 .error {
@@ -447,6 +458,7 @@ textarea.form_input {
 
 .left_nav_element_two {
   display: flex;
+  align-items: center;
 }
 
 .right_nav_element_two {
@@ -495,6 +507,7 @@ textarea.form_input {
 
 .logo {
   margin-left: 20px;
+  height: 18px;
 }
 
 .text_icon {

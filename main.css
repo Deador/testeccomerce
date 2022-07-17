@@ -414,6 +414,10 @@ textarea.form_input {
 
 /* HEADER */
 /* 1 lvl */
+.header {
+  padding-top: 16px;
+}
+
 .nav_one_lvl {
   display: flex;
   justify-content: space-between;

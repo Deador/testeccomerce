@@ -1,13 +1,16 @@
-// export default formOrder;
-
 const form = document.querySelector("form");
 
 form.onsubmit = (e) => {
   let countSuccess = 0; // Счетчик проверок полей
 
   function testValidate() {
-    const inputReq = document.querySelectorAll("._req"); // Получаю все обязательные поля
+    const formData = new FormData(); // Записываю ключ - значение в конструктор
+    const inputReq = document.querySelectorAll(
+      "form input[type=text], input[type=radio]:checked, textarea, select"
+    ); // Получаю все поля, радиокнопку только выбранную
+
     for (let input of inputReq) {
+      formData.append(input.name, input.value);
       //Если нахожу телефон запускаю проверку телефона
       if (input.classList.contains("phone_num")) {
         console.log("Проверяю номер телефона");
@@ -21,11 +24,13 @@ form.onsubmit = (e) => {
       else if (input.classList.contains("adress")) {
         console.log("Проверяю адрес доставки");
         adressTest(input);
-      } else if (input.classList.contains("checkbox")) {
-        checkboxTest(input);
       }
     }
-    testAll();
+    // Содержимое формдаты
+    // formData.forEach((value,key) => {
+    //   console.log(key+" "+value)
+    // });
+    testAll(formData);
   }
 
   // Проверка номера телефона
@@ -68,17 +73,6 @@ form.onsubmit = (e) => {
     }
   }
 
-  // Проверка политики
-  function checkboxTest(input) {
-    console.log(input);
-    if (input.checked === true) {
-      console.log("Чекбокс выбран");
-      removeError(input);
-    } else {
-      addError(input);
-    }
-  }
-
   // Добавление ошибки к конкретному полю
   function addError(input) {
     input.classList.add("error");
@@ -89,19 +83,37 @@ form.onsubmit = (e) => {
   }
 
   // Все проверки
-  async function testAll() {
+  function testAll(formData) {
     // Если счетчик успешных проверок = 3, то успех
     if (countSuccess === 3) {
       e.preventDefault();
       console.log("Все проверки успешны");
       console.log(countSuccess);
-      
+      sendMail(formData);
     }
     // Если поля с ошибками (count<3) форму не отправляю
     else {
       console.log("Поля проверку не прошли");
       console.log(countSuccess);
       e.preventDefault();
+    }
+  }
+
+  async function sendMail(formData) {
+    //========Отправка данных в php скрипт====
+    // e.preventDefault()
+    const response = await fetch("https://formspree.io/f/meqnbrrg", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    if (response.ok) {
+      console.log("Форма отправлена");
+      form.reset();
+    } else {
+      console.log("Ошибка");
     }
   }
 

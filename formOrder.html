@@ -169,7 +169,7 @@
               placeholder="Адрес эл. почты для отправки чека" name="email"
             />
           </div>
-          <div class="type_order_data block--mode flex_column">
+                    <div class="type_order_data block--mode flex_column">
             <div class="title_form_block">Тип заказа</div>
             <div class="form_order_radio">
               <div class="radio_item">
@@ -206,14 +206,24 @@
                 <label class="label_radio" for="rightRadio">Доставка</label>
               </div>
             </div>
+
+            <div class="group_adress flex_column">
             <input
               type="text"
               class="form_input _req adress"
-              placeholder="Укажите адрес доставки" name="adress"
+              placeholder="Укажите адрес доставки"
+              name="adress"
             />
-            <textarea id="text_area" class="form_input last_input" name="comment">
+            <div class="adress_container none"></div>
+          </div>
+            <textarea
+              id="text_area"
+              class="form_input last_input"
+              name="comment"
+            >
 Комментарий к заказу</textarea
             >
+          </div>
           </div>
           <div class="type_chooise_pay block--mode flex_column">
             <div class="title_form_block">Способ оплаты</div>
@@ -243,6 +253,8 @@
         </form>
       </div>
     </section>
+        <script src="./modules/sendForm/focus.js"></script>
+    <script type="module" src="./modules/sendForm/autoComplete.js"></script>
     <script src="./modules/sendForm/form6.js"></script>
   </body>
 </html>

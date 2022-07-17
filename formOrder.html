@@ -153,23 +153,30 @@
     <!-- ------------Форма заказа--------------->
     <section>
       <div class="container">
-        <form class="form_order">
+                <form class="form_order">
           <h2 class="title-2">Оформление заказа</h2>
           <div class="personal_data block--mode flex_column">
             <div class="title_form_block">Личные данные</div>
-            <input type="text" class="form_input" placeholder="Ваше имя" name="name"/>
+            <input
+              type="text"
+              class="form_input"
+              placeholder="Ваше имя"
+              name="name"
+            />
             <input
               type="text"
               class="form_input _req phone_num"
-              placeholder="Номер телефона" name="number"
+              placeholder="Номер телефона"
+              name="number"
             />
             <input
               type="text"
               class="form_input last_input _req email"
-              placeholder="Адрес эл. почты для отправки чека" name="email"
+              placeholder="Адрес эл. почты для отправки чека"
+              name="email"
             />
           </div>
-                    <div class="type_order_data block--mode flex_column">
+          <div class="type_order_data block--mode flex_column">
             <div class="title_form_block">Тип заказа</div>
             <div class="form_order_radio">
               <div class="radio_item">
@@ -224,13 +231,12 @@
 Комментарий к заказу</textarea
             >
           </div>
-          </div>
           <div class="type_chooise_pay block--mode flex_column">
             <div class="title_form_block">Способ оплаты</div>
             <select name="way" id="way" class="select form_input">
-              <option value="card">Банковская карта</option>
-              <option value="sbp">Система быстрых платежей</option>
-              <option value="google_pay">Google Pay</option>
+              <option value="Банковская карта">Банковская карта</option>
+              <option value="Оплата наличными">Оплата наличными</option>
+              <option value="СБП">Система быстрых платежей</option>
             </select>
           </div>
           <div class="final_price block--mode">
@@ -239,14 +245,19 @@
           </div>
           <div class="polite block--mode last_input">
             <div class="polite__checkbox">
-              <input class="checkbox _req" checked id="checkbox" type="checkbox" />
-              <label class="label_checkbox" for="checkbox"
-                >Нажимая на кнопку «Отправить» вы соглашаетесь на обработку
-                персональных данных</label
+              <label class="label_checkbox"
+                >Нажимая на кнопку «Оплатить» вы соглашаетесь на обработку<a
+                  href="#"
+                  class="link_polite"
+                >
+                  персональных данных</a
+                ></label
               >
             </div>
             <div class="polite__btns">
-              <button type="submit" class="btn_primary btn_submit">Оплатить</button>
+              <button type="submit" class="btn_primary btn_submit">
+                Оплатить
+              </button>
               <button class="btn_text">Отмена</button>
             </div>
           </div>
